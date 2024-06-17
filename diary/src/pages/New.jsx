@@ -1,9 +1,21 @@
-import { useSearchParams } from "react-router-dom"
+import Header from "../components/Header"
+import Button from "../components/Button"
+import Editor from "../components/Editor"
+import { useNavigate } from "react-router-dom"
+
+
 
 function New() {
-    const [params, setParams] = useSearchParams();
+    const nav = useNavigate()
+    
     return (
-        <>new</>
+        <>
+            <Header
+                leftChild={<Button text="< 뒤로 가기" onClick={() => nav("/")}/>}
+                title="새 일기 쓰기"
+            />
+            <Editor />
+        </>
     )
 }
 
