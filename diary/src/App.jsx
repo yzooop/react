@@ -1,5 +1,6 @@
 import './App.css'
-import {Routes, Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
+
 import Diary from './pages/Diary'
 import Home from './pages/Home'
 import New from './pages/New'
@@ -13,16 +14,23 @@ import { createContext, useReducer, useRef } from 'react'
 const mockData = [
     {
         id: 1,
-        createDate: new Date().getTime(),
+        createDate: new Date("2024-06-17").getTime(),
         emotionId: 1,
         content: "1번 일기 내용",
         isDeleted : false
     },
     {
         id: 2,
-        createDate: new Date().getTime(),
+        createDate: new Date("2024-06-16").getTime(),
         emotionId: 2,
         content: "2번 일기 내용",
+        isDeleted : false
+    },
+    {
+        id: 3,
+        createDate: new Date("2024-05-17").getTime(),
+        emotionId: 3,
+        content: "3번 일기 내용",
         isDeleted : false
     }
 ]
@@ -46,8 +54,8 @@ function reducer(state, action) {
 }
 
 // diary의 context 공급
-const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function App() {
     const [data, dispatch] = useReducer(reducer, mockData);
@@ -75,7 +83,6 @@ function App() {
         })
     }
 
-    
     // 삭제
     const onDelete = (id) => {
         dispatch({
