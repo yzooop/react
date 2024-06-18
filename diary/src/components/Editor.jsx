@@ -5,22 +5,7 @@ import EmotionItem from "./EmotionItem"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { emotionList } from "../util/constants"
-
-const getStringedData = (targetDate) => {
-    // 날짜 -> YYYY-MM_DD
-    let year = targetDate.getFullYear()
-    let month = targetDate.getMonth() + 1
-    let day = targetDate.getDate()
-    
-    if (month < 10) {
-        month = "0" + month
-    }
-    if (day < 10) {
-        month = "0" + day
-    }
-
-    return `${year}-${month}-${day}`
-}
+import { getStringedData } from "../util/getStingedDate"
 
 function Editor({ onSubmit, initData }) {
     const [input, setInput] = useState({
