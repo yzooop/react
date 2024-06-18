@@ -68,8 +68,8 @@ function App() {
             data: {
                 id: idRef.current++, // ref는 객체다 객체다 객체다
                 createDate,
-                emotionId: emotionId,
-                content: content,
+                emotionId,
+                content,
                 isDeleted : false
             }
         })

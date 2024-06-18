@@ -35,6 +35,7 @@ function DiaryList({ data }) {
                 </select>
                 <Button onClick={() => nav('/new')} text="새 일기쓰기" type="POSITIVE" />
             </div>
+            {/* 일기 데이터 하나하나 */}
             <div className="list_wrapper">
                 {sortedData.map((item) => <DiaryItem key={item.id} {...item} />)}
             </div>
